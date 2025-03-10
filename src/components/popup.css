@@ -1,0 +1,62 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Poluprozirna pozadina */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Osigurava da je prozor iznad drugih elemenata */
+}
+
+.popup-container {
+    background-color: white; /* Pozadina pop-up prozora */
+    border-radius: 20px;
+    border: solid black 2px;
+    width: 20%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Blaga senka */
+}
+
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.checkmark {
+    font-size: 40px;
+    color: magenta;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

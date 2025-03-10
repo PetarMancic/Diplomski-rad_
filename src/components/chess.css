@@ -1,0 +1,131 @@
+.chess-board {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 150px auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.cell {
+  width: 12.5%; /* 100% / 8 (za 8 polja) */
+  height: 0; /* Ostavite visinu 0, upravljaće se odnosom */
+  padding-bottom: 12.5%; /* Postavite padding da bi se održao odnos 1:1 */
+}
+
+.chessboard-container {
+  position: relative;
+  display: inline-block;
+}
+
+.row-numbers,
+.column-letters {
+  position: absolute;
+  color: blue;
+  font-size: 16px; /* Manja font veličina za mobilne uređaje */
+  font-weight: bold;
+}
+
+.row-numbers {
+  left: -20px; /* Podesite prema veličini table */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.column-letters {
+  top: -20px; /* Podesite prema veličini table */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .chess-board {
+    width: 100%; /* Širina tablice da bude 100% na manjim ekranima */
+    margin: 0; /* Ukloni margine */
+  }
+
+  .row-numbers,
+  .column-letters {
+    font-size: 14px; /* Manje font veličine na mobilnim uređajima */
+  }
+
+  .cell {
+    width: 12.5%;
+    padding-bottom: 12.5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .row-numbers,
+  .column-letters {
+    font-size: 12px; /* Dodatno smanjenje font veličine za ekstra mali ekran */
+  }
+}
+
+.ispodTable {
+  flex-direction: column; /* Promena iz 'row' u 'column' na manjim ekranima */
+  align-items: center; /* Centriranje elemenata */
+  padding: 10px;
+}
+
+.strelice {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .ispodTable {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .strelice {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .column-letters,
+  .row-numbers {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .column-letters,
+  .row-numbers {
+    font-size: 12px;
+  }
+}
+
+.svetleci-div {
+  background-color: red; /* Pozadinska boja */
+  border: 1px solid black; /* Okvir */
+  padding: 10px; /* Unutrašnja margina */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Efekat svetla */
+}
+
+/* Dodajte ovo u vašu CSS datoteku */
+.pulsirajuci {
+  animation: pulsirati 1.5s infinite; /* Trajanje animacije i beskrajno ponavljanje */
+}
+
+@keyframes pulsirati {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Veća svetlost */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+}
